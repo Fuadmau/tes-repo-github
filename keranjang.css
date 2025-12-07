@@ -1,0 +1,230 @@
+:root {
+    --primary: #6EC207;
+    --bg:#000000;
+    --error: #ff4d4d;
+
+}
+*{
+    font-family: 'Poppins',sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+body {
+    font-family: Arial, sans-serif;
+    background: #f3f3f3;
+    margin: 0;
+    padding: 0;
+}
+
+.title {
+    text-align: center;
+    margin: 30px;
+    margin-top: 100px;
+}
+
+.empty-cart {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 30px;
+}
+
+.table-container {
+    width: 80%;
+    margin: auto;
+}
+
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.cart-table th,
+.cart-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+.cart-table th {
+    background: #4CAF50;
+    color: white;
+}
+
+.cart-table tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+.total-row {
+    background: #e3ffe3;
+    font-size: 17px;
+}
+
+.right {
+    text-align: right;
+}
+
+.btn-delete {
+    padding: 6px 12px;
+    background: #e63946;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.btn-delete:hover {
+    background: #c62828;
+}
+
+.center {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn-checkout {
+    padding: 10px 20px;
+    background: #1d3557;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.btn-checkout:hover {
+    background: #457b9d;
+}
+
+.btn-lanjut {
+    padding: 10px 20px;
+    background: #016d01;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.btn-lanjut:hover {
+    background: #4cb45a;
+}
+
+/*navbar*/
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.4rem 7%;
+    background-color: rgb(37, 37, 37);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
+
+.navbar .navbar-logo{
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.navbar .navbar-logo span{
+    color:#92ff0c;
+    font-style: italic;
+}
+
+.navbar .navbar-nav a {
+    color: #cacaca;
+    display: inline-block;
+    font-size: 1,4rem;
+    margin: 0 1rem;
+
+}
+
+
+.navbar .navbar-nav a:hover{
+    color: var(--primary);
+}
+
+.navbar .navbar-nav a::after{
+    content: '';
+    display: block;
+    padding-bottom: 0.5rem;
+    border-bottom: 0.1rem solid var(--primary);
+    transform: scaleX(0);
+    transition: 0.2s linear;
+}
+
+.navbar .navbar-nav a:hover::after{
+    transform: scaleX(0.5);
+}
+
+.navbar .navbar-extra a {
+    color: #F7F9F2;
+    margin: 0.5rem;
+}
+
+.navbar .navbar-extra a:hover {
+    color: var(--primary);
+    
+}
+.navbar-extra {
+    display: none;
+}
+.navbar-extra a i {
+    font-size: 2.5rem; /* Ukuran ikon */
+    color: #25D366; /* Warna khas WhatsApp */
+    margin: 0 0.5rem;
+    transition: 0.3s ease;
+}
+
+.navbar-extra a i:hover {
+    color: #128C7E; /* Warna ketika ikon disentuh */
+}
+
+/*tablet*/
+@media(max-width:812px){
+    html{
+        font-size: 62.5%;
+        scroll-behavior: smooth;
+    }
+    .navbar-extra {
+        display: block; /* Tampilkan pada layar kecil */
+    }
+    .navbar-extra a i {
+        font-size: 2rem; /* Ukuran lebih kecil untuk layar kecil */
+    }
+    .navbar .navbar-nav{
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background-color: rgb(37, 37, 37);
+        width: 30rem;
+        height: 100vh;
+        transition: 0.3s;
+    }
+
+    .navbar .navbar-nav.active{
+        right: 0; /* Atur agar navbar muncul di layar */
+        transition: 0.3s ease-in-out;
+        /* z-index: 10000; */
+    }
+    .navbar .navbar-nav a{
+        color: #F7F9F2;
+        display: block;
+        margin: 1.5rem;
+        padding: 0.5rem;
+        font-size: 2rem;
+    }    
+    .navbar .navbar-nav a::after{
+        transform-origin: 0 0;
+    }
+
+    .navbar .navbar-nav a:hover::after{
+        transform: scaleX(0.2);
+    }
+}
